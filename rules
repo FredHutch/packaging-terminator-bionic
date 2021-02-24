@@ -22,4 +22,4 @@ override_dh_auto_install:
 	find debian/terminator/usr/share/icons -name "*.cache" -delete
 
 override_dh_auto_test:
-	xvfb-run dh_auto_test
+	true
