@@ -1,0 +1,8 @@
+---
+include:
+  - https://salsa.debian.org/salsa-ci-team/pipeline/raw/master/salsa-ci.yml
+  - https://salsa.debian.org/salsa-ci-team/pipeline/raw/master/pipeline-jobs.yml
+
+variables:
+  # ignore NONVERBOSE warning from gettext compilation
+  SALSA_CI_BLHC_ARGS: "--ignore-line .*compiling\\s+po/\\S+\\.po.*"

@@ -1,0 +1,447 @@
+terminator (2.1.0-1) unstable; urgency=medium
+
+  * [7c08e04] d/changelog: Add missing change
+  * [db30bae] New upstream version 2.1.0
+  * [021fe66] d/patches: Remove obsolete appdata_improvement
+
+ -- Markus Frosch <lazyfrosch@debian.org>  Wed, 06 Jan 2021 11:40:53 +0100
+
+terminator (2.0.1+gittag-1) unstable; urgency=medium
+
+  [ Ondřej Nový ]
+  * d/control: Update Maintainer field with new Debian Python Team
+    contact address.
+  * d/control: Update Vcs-* fields with new Debian Python Team Salsa
+    layout.
+
+  [ Markus Frosch ]
+  * [4cf56ac] Make dbus dependency a recommendation (Closes: #961277)
+  * [5477613] d/control: Remove inactive uploaders
+  * [aaacd9c] d/upstream: Add signing-key of Matt Rose
+  * [9e22ab7] New upstream version 2.0.1
+  * [e7f61ac] Remove obsolete patches for 2.0
+  * [0f0fd82] d/control d/rules: Update python dependencies and test settings
+  * [45f77a0] New upstream version 2.0.1+gittag
+              Includes all missing files since the uploaded and signed tarball
+              was a built egg.
+  * [253a327] Bump Standards Version and debhelper-compat
+
+ -- Markus Frosch <lazyfrosch@debian.org>  Thu, 31 Dec 2020 15:34:49 +0100
+
+terminator (1.92-2) unstable; urgency=medium
+
+  [ Debian Janitor ]
+  * Set upstream metadata fields: Bug-Database, Bug-Submit, Repository,
+    Repository-Browse.
+
+  [ Markus Frosch ]
+  * [864a8b8] rules: Remove any icon cache file after install (Closes: #959856)
+
+ -- Markus Frosch <lazyfrosch@debian.org>  Thu, 21 May 2020 22:02:22 +0200
+
+terminator (1.92-1) unstable; urgency=medium
+
+  [ Ondřej Nový ]
+  * Use debhelper-compat instead of debian/compat.
+
+  [ Markus Frosch ]
+  * [0c68e8c] Add gitlab-ci config
+  * [c6ab195] Switch upstream to GitHub gnome-terminator/terminator
+    (Closes: #955990)
+  * [81f915b] New upstream version 1.92
+    (Closes: #955383 Closes: #953153)
+  * [aef361a] Remove obsolete Python 3 patches
+  * [eafb65b] Update appdata_improvement patch
+  * [b7fb000] rules: Remove get-orig-source
+  * [b609ccf] rules: Improve clean
+  * [9057a46] control: Raise debhelper compat to 12
+  * [3e0ebab] rules: Use proper pybuild instead of manual install
+  * [f04db82] control: Bump Standards to 4.5.0
+
+ -- Markus Frosch <lazyfrosch@debian.org>  Sun, 19 Apr 2020 14:24:30 +0200
+
+terminator (1.91-4) unstable; urgency=medium
+
+  * [3e6b8de] Add appdata_improvement.patch
+  * [5c47f94] Add patch to fix Drag&Drop under Python 3
+  * [7ba33fe] Add patch to fix Python 3 related issues with layout selection
+    (Closes: #921824)
+
+ -- Markus Frosch <lazyfrosch@debian.org>  Thu, 28 Feb 2019 21:16:02 +0100
+
+terminator (1.91-3) unstable; urgency=medium
+
+  * [b66175a] control: Add missing dependency on dbus-x11 (Closes: #918149)
+  * [dab2e77] patch: Install appdata to /usr/share/metainfo
+  * [709e1ad] control: Give maintainer to the python-apps-team
+  * [11b155c] control: Add myself as uploader
+
+ -- Markus Frosch <lazyfrosch@debian.org>  Fri, 01 Feb 2019 10:38:56 +0100
+
+terminator (1.91-2) experimental; urgency=medium
+
+  [ Ondřej Nový ]
+  * d/changelog: Remove trailing whitespaces
+
+  [ Emilio Pozuelo Monfort ]
+  * debian/patches/python3.diff: port to Python 3.
+  * debian/control, debian/rules: update for Python 3.
+
+ -- Emilio Pozuelo Monfort <pochu@debian.org>  Tue, 24 Apr 2018 20:24:15 +0200
+
+terminator (1.91-1) unstable; urgency=medium
+
+  * New upstream release. Closes: #858168.
+  * debian/upstream/signing-key.asc:
+    + Add new upstream key.
+  * debian/patches/add-keywords-entry.diff,
+    debian/patches/gi-require-exception.diff,
+    debian/patches/subwindows-zero-size.patch:
+    + Delete patches merged upstream.
+
+ -- Emilio Pozuelo Monfort <pochu@debian.org>  Thu, 29 Jun 2017 20:30:30 +0200
+
+terminator (1.90+bzr-1705-1) unstable; urgency=medium
+
+  * New upstream snapshot.
+  * debian/control: Remove Rudy Godoy Guillén from uploaders. Closes: #846795.
+  * debian/rules: Update get-orig-source rule.
+  * debian/patches/fix-spelling-errors.diff: Removed, merged upstream.
+  * debian/patches/subwindows-zero-size.patch:
+    + New patch, fix subterminal size when splitting a terminal.
+      Closes: #846307.
+  * Refresh patches.
+  * debian/control: Drop gir1.2-gconf-2.0 from recommends, no longer used.
+  * Switch URLs to https.
+
+ -- Emilio Pozuelo Monfort <pochu@debian.org>  Thu, 26 Jan 2017 17:38:15 +0100
+
+terminator (1.90-1) unstable; urgency=medium
+
+  [ Emilio Pozuelo Monfort ]
+  * New upstream release. Closes: #807668, #809343, #818635, #833901.
+  * debian/rules: Add get-orig-source rule.
+  * debian/control: Update (build-)dependencies.
+    + Depends on the new vte 2.91. Closes: #790190.
+  * debian/patches/force_xdg-open.diff: Remove, upstream is not using that code
+    anymore.
+  * debian/patches/gi-require-exception.diff: New patch. Catch all exception
+    types when importing gi modules, as gi.require_version throws ValueErrors
+    when a module is not available.
+  * debian/control: Add myself to Uploaders.
+
+  [ Julián Moreno Patiño ]
+  * debian/control: Bump Standards-Version to 3.9.8 (no changes).
+    + Use HTTPS transport protocol for Vcs-Browser URI
+    + Add python-gi-cairo to Depends.
+  * debian/patches/fix-spelling-errors.diff, Fix spelling errors in the manpage.
+  * debian/patches/not-install-terminator-wrapper.diff, Refresh offset.
+  * debian/patches/not-install-doc.diff, Remove, not include it by upstream
+    anymore.
+  * debian/copyright: Extend debian copyright holder years.
+    + Add Emilio Pozuelo Monfort to debian copyright.
+
+ -- Julián Moreno Patiño <julian@debian.org>  Sat, 26 Nov 2016 20:21:28 -0500
+
+terminator (0.98-1) unstable; urgency=medium
+
+  * New upstream release. (Closes: #778874, #803666)
+  * Remove patches, merge with upstream.
+    + es-po.diff
+    + fi-po.diff
+    + fix-maximize.diff
+    + fix-split-multiple-tabs.diff
+    + fix-tab-with-multiple-terminals-not-closing.diff
+    + fix-unfocused-font-brightness.diff
+    + x-terminal-emulator-fix.diff, better aproach from upstream.
+  * d/watch, Add support for signing tarballs.
+  * Add force_xdg-open.diff patch to force open default
+    web browser. (Closes: #648446)
+    + Thanks to Eduard Bloch for it.
+  * Add not-install-doc.diff patch to avoid to install
+    documentation, a lot of prebuilt javascript object
+    that aren't in the GNU Debian archive.
+  * Add not-install-terminator-wrapper.diff patch to
+    avoid to install terminator.wrapper file.
+  * Bump Standards-Version to 3.9.6 (no changes).
+  * Add dh-python to B-D.
+  * Use pybuild to build the package.
+
+ -- Julián Moreno Patiño <julian@debian.org>  Wed, 23 Dec 2015 11:40:07 -0500
+
+terminator (0.97-4) unstable; urgency=medium
+
+  * Add patch to fix tab with multiple terminals
+    not closing. (Closes: #756300 LP: #1253995)
+    + Thanks to Stephen Boddy and Chris J Arges
+      for it.
+
+ -- Julián Moreno Patiño <julian@debian.org>  Tue, 05 Aug 2014 16:20:15 -0500
+
+terminator (0.97-3) unstable; urgency=medium
+
+  * Add patch to fix -e parameter to work as
+    x-terminal-emulator. (Closes: #734655 LP: #366644)
+    + Thanks to Neal Fultz for it.
+  * Add patch to fix splits not being central
+    with multiple tabs. (Closes: #752658)
+    + Thanks to Justin Ossevoort for it.
+  * Update Homepage in d/control. (Closes: #740056)
+    + Thanks to Richard Hartmann for it.
+  * Bump Standards-Version to 3.9.5 (no changes).
+  * Extend debian copyright holder years.
+
+ -- Julián Moreno Patiño <julian@debian.org>  Tue, 01 Jul 2014 15:06:08 -0500
+
+terminator (0.97-2) unstable; urgency=low
+
+  [ Jakub Wilk ]
+  * Use canonical URIs for Vcs-* fields.
+
+  [ Julián Moreno Patiño ]
+  * Add patch to fix unfocused terminal font brightness. (Closes: #715414)
+  * Add patch to fix maximize problem on Fluxbox. (Closes: #706600)
+  * Add patch to fix typo in spanish po file. (Closes: #717570)
+  * Add patch to add keywords entry to the desktop file.
+
+ -- Julián Moreno Patiño <julian@debian.org>  Wed, 16 Oct 2013 17:32:38 -0500
+
+terminator (0.97-1) unstable; urgency=low
+
+  * New upstream release.
+    + Repack upstream tarball to remove bazar repo files,
+      pyc files, .project, .pydevproject files and debian folder.
+  * debian/watch: Update regular expression.
+  * debian/patches/00_fix_typo_manpage.diff: Remove patch,
+    merge with upstream.
+  * debian/patches/fi-po.diff: Add patch to fix typo. (Closes: #686175)
+  * debian/control:
+    + Add python-dbus to Depends.
+    + Bump Standards Version to 3.9.4.
+    + Bump debhelper version to 9.
+  * debian/compat: Bump compat level 5 to 9.
+
+ -- Julián Moreno Patiño <julian@debian.org>  Wed, 01 May 2013 17:40:18 -0500
+
+terminator (0.96-2) unstable; urgency=low
+
+  * Migrate from cdbs to dh.
+    + Add terminator.links.
+    + Remove cdbs from B-D.
+  * Don't ship icon-theme.cache file. (Closes: #684873)
+    + Remove libgtk2.0-bin from B-D and Depends.
+  * Bump debhelper version to 8.
+
+ -- Julián Moreno Patiño <julian@debian.org>  Tue, 21 Aug 2012 20:29:34 -0500
+
+terminator (0.96-1) unstable; urgency=low
+
+  [Nicolas Valcárcel Scerpella]
+  * New upstream release (Closes: #649496)
+  * Update Maintainer Field (Closes: #680904)
+  * Update Standards version to 3.9.2
+
+  [Julián Moreno Patiño]
+  * Add myself to Uploaders, with permission from
+    Nicolas Valcárcel Scerpella.
+  * Remove XS-Python-Version and XB-Python-Version from
+    debian/control.
+  * Add X-Python-Version to debian/control.
+  * Remove B-D-I from debian/control.
+  * Switch to dpkg-source 3.0 (quilt) format.
+  * Bump Standards-Version to 3.9.3.
+    + Update debian/copyright to copyright-format 1.0.
+  * Remove simple-patchsys.mk from debian/rules,
+    already deprecated.
+  * Add python-vars.mk in debian/rules to check
+    some python packaging validations.
+  * Remove DEB_PYTHON_SYSTEM from debian/rules,
+    already deprecated.
+  * Add DEB_PYTHON2_MODULE_PACKAGES in debian/rules,
+    to use dh_python2 support.
+  * Bump python version in debian/control to use dh_python2
+    support.
+  * Bump cdbs version to 0.4.90~.
+  * Use set -e instead #!/bin/sh -e in terminator.postinst,
+    terminator.preinst, terminator.prerm scripts.
+  * Add 00_fix_typo_manpage.diff patch to fix typo.
+  * Remove debian/README.source, it's not necessary.
+  * Add libgtk2.0-bin to B-D.
+  * wrap-and-sort control file.
+  * Add python-notify to Recommends. (Closes: #626255)
+
+ -- Julián Moreno Patiño <julian@debian.org>  Sat, 11 Aug 2012 11:58:27 -0500
+
+terminator (0.95-1) unstable; urgency=low
+
+  * New upstream release
+  * Update Standards version to 3.9.1
+  * Update Maintainer field
+  * Update debian/copyright
+
+ -- Nicolas Valcárcel Scerpella <nicolas.valcarcel@canonical.com>  Fri, 27 Aug 2010 20:06:28 -0500
+
+terminator (0.93-1) unstable; urgency=low
+
+  * New upstream release
+  * Remove terminator_config.patch, included upstream.
+
+ -- Nicolas Valcárcel Scerpella (Canonical) <nvalcarcel@canonical.com>  Thu, 15 Apr 2010 17:50:46 -0500
+
+terminator (0.92-1) unstable; urgency=low
+
+  * New upstream release
+  * Remove python-xdg from Recommends. (Closes: #567967)
+  * Downgrade python-gnome2 to Recommends.
+  * Update python-gtk2 dependency to (>= 2.14.0)
+  * Add python-keybinder to Recommends
+  * Add terminator_config.patch:
+    - Remove palette's default value in terminator_config man page
+      to satisfy lintian.
+  * Bumped standars to 3.8.4
+
+ -- Nicolas Valcárcel Scerpella (Canonical) <nvalcarcel@canonical.com>  Mon, 12 Apr 2010 11:42:57 -0500
+
+terminator (0.14-1) unstable; urgency=low
+
+  * New upstream release
+  * Dropped debian/patches/10_terminator_annoying_notification.patch:
+    included upstream
+  * Bump Standard version to 3.8.3
+
+ -- Nicolas Valcárcel Scerpella (Canonical) <nvalcarcel@canonical.com>  Thu, 03 Dec 2009 16:20:06 -0500
+
+terminator (0.13+ds1-2) unstable; urgency=low
+
+  [ Emilio Pozuelo Monfort ]
+  * debian/patches/10_terminator_annoying_notification.patch:
+    New patch. Don't popup a notification everytime you close
+    terminator.
+
+ -- Python Applications Packaging Team <python-apps-team@lists.alioth.debian.org>  Tue, 14 Jul 2009 22:23:23 +0200
+
+terminator (0.13+ds1-1) unstable; urgency=low
+
+  * New upstream release
+    (debian and .bzr directories removed from upstream tarball)
+    (debian and .bzr directories removed from upstream tarball)
+  * Droped 01_change_interpreter.patch, fixed upstream
+  * Migrate from python-central to python-support
+  * Added intltool to build-depends to avoid it FTBFS
+  * Bumped starndards version
+  * Mangle debian version in watch file
+  * Bumped XS-Python-Version to >=2.5
+  * Install terminator in a private directory (/usr/share/terminator)
+  * Remove terminator.desktop file in clean rule
+
+ -- Nicolas Valcárcel Scerpella (Canonical) <nvalcarcel@canonical.com>  Tue, 30 Jun 2009 17:22:48 -0500
+
+terminator (0.12-2) unstable; urgency=low
+
+  * Fix incorrect use of update-alternatives (Closes: #509667)
+  * Change e-mail address in Maintainer field.
+
+ -- Nicolas Valcárcel Scerpella <nvalcarcel@canonical.com>  Mon, 09 Mar 2009 10:48:37 -0500
+
+terminator (0.12-1) unstable; urgency=low
+
+  [ Nicolas Valcárcel ]
+  * New upstream release (Closes: #512502)
+  * Removed:
+    - 02_terminator_config.patch
+    - 03_bad_config_file_handling_behabior.patch
+  * Increment x-terminal-emulator priority to avoid gnome-terminal override
+  * Added pycompat
+
+  [ Sandro Tosi ]
+  * debian/control
+    - switch Vcs-Browser field to viewsvn
+
+  [ Marco Rodrigues ]
+  * debian/terminator.postinst:
+    + Add -e option to sh to remove
+      lintian warning.
+  * debian/terminator.prerm:
+    + Add -e option to sh to remove
+      lintian warning.
+
+ -- Nicolas Valcárcel <nvalcarcel@ubuntu.com>  Wed, 21 Jan 2009 08:30:15 -0500
+
+terminator (0.11-2) unstable; urgency=low
+
+  * Added 03_bad_config_file_handling_behabior.patch:
+    - Fix a bad config file handling behaviour.
+
+ -- Nicolas Valcárcel <nvalcarcel@gmail.com>  Wed, 24 Sep 2008 23:40:20 -0500
+
+terminator (0.11-1) unstable; urgency=low
+
+  * New upstream release.
+  * Fixed whatis entry on terminator_config manpage
+
+ -- Nicolas Valcárcel <nvalcarcel@gmail.com>  Sun, 21 Sep 2008 04:36:34 -0500
+
+terminator (0.10-1) unstable; urgency=low
+
+  [ Nicolas Valcárcel ]
+  * New upstream release
+  * Bumped 01-fix-regexp-compilation.patch, fixed in upstream
+  * Added posinst and prerm:
+    - Added dependency on libgtk2.0-bin for gtk-update-icon-cache to work
+  * Update copyright
+  * Provide x-terminal-emulator (Closes: #498256)
+
+  [ Piotr Ożarowski ]
+  * Added PAPT to Uploaders
+  * Replaced Vcs-* fields with PAPT's ones
+  * Minor changes in package description
+  * Added python-gobject and python-gtk2 to Depends
+  * Added debian/README.source file
+
+  [ Emilio Pozuelo Monfort ]
+  * debian/pycompat:
+    - Removed, not needed.
+  * debian/terminator.postinst,
+    debian/rules:
+    - Call dh_icons instead of manually calling gtk-update-icon-cache.
+
+ -- Nicolas Valcárcel <nvalcarcel@gmail.com>  Mon, 08 Sep 2008 09:57:37 -0500
+
+terminator (0.9-2) unstable; urgency=low
+
+  * Fixed regexp call on terminatorlib/terminatorterm.py to avoid unnecesary
+    warnings. (Closes: #493589)
+
+ -- Nicolas Valcárcel <nvalcarcel@gmail.com>  Tue, 12 Aug 2008 23:18:17 -0500
+
+terminator (0.9-1.1) unstable; urgency=low
+
+  * NMU. Rebuild to move files to /usr/share/pyshared. Closes: #490509.
+
+ -- Matthias Klose <doko@debian.org>  Fri, 18 Jul 2008 15:40:23 +0000
+
+terminator (0.9-1) unstable; urgency=low
+
+  * New upstream release. (Closes: #489858)
+
+ -- Nicolas Valcárcel <nvalcarcel@gmail.com>  Tue, 08 Jul 2008 07:24:49 -0500
+
+terminator (0.8.1-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Nicolas Valcárcel Scerpella (aka nxvl) <nvalcarcel@gmail.com>  Tue, 19 Feb 2008 20:10:17 -0500
+
+terminator (0.7-2) unstable; urgency=low
+
+  * Removed empty entries on .desktop file (Closes: 465470)
+  * Added keybindings information to the man page.
+  * Added cdbs patch system to debian/rules.
+
+ -- Nicolas Valcárcel Scerpella (aka nxvl) <nvalcarcel@gmail.com>  Tue, 12 Feb 2008 16:26:51 -0500
+
+terminator (0.7-1) unstable; urgency=low
+
+  * Packaging work for initial inclusion in Debian. (Closes: #460317)
+
+ -- Nicolas Valcárcel Scerpella (aka nxvl) <nvalcarcel@gmail.com>  Fri, 11 Jan 2008 19:44:57 -0500
