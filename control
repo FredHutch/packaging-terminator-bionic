@@ -3,7 +3,7 @@ Section: misc
 Priority: optional
 Maintainer: Debian Python Team <team+python@tracker.debian.org>
 Uploaders: Markus Frosch <lazyfrosch@debian.org>
-Build-Depends: debhelper-compat (= 13),
+Build-Depends: debhelper-compat (= 11),
  dh-python,
  intltool,
  python3,
